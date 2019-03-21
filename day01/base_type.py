@@ -70,6 +70,8 @@ def list_demo():
     alist = [1,2,3,4,5,6,7,8,9]     #声明一个数组并赋值
     print(alist[7])                 #调用数组,下标0是第一个值,-1是最后一个值
     print(alist[2:7])               #取下标2至6的值
+    print(alist[:7])                #从下标0取至6
+    print(alist[2:])                #从下标2取至最后
 
 if __name__ == '__main__':
     int_demo(2,30)
