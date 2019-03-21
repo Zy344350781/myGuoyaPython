@@ -66,11 +66,17 @@ def float_demo():
     bF = 4.1151248788446498
     return aF + bF
 
+def list_demo():
+    alist = [1,2,3,4,5,6,7,8,9]     #声明一个数组并赋值
+    print(alist[7])                 #调用数组,下标0是第一个值,-1是最后一个值
+    print(alist[2:7])               #取下标2至6的值
+
 if __name__ == '__main__':
     int_demo(2,30)
     str_demo()
     float = float_demo()
     print(float)
+    list_demo()
 
 
 
