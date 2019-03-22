@@ -5,7 +5,6 @@
     # range(5,10)     #从5开始小于10
     # range(2,10,2)   #从2开始小于10且步长2
     # range(10,2,-1)  #从10开始大于2且步长-1
-    # alist = range(10) #声明一个0-9的数组
 
 
     # for i in range(1,10):
@@ -51,13 +50,13 @@
     # 周末作业
     # 写一个方法,传入两个 int参数, 将两个参数之间的 偶数加起来
 def int():
-    a = 2
-    b = 100
+    a = 100
+    b = 2
     sum = 0
     if a < b:
         for i in range(a + 1, b):
             if i % 2 == 0:
-                sum += i
+                sum = sum + i
     elif a > b:
         for i in range(b + 1, a):
             if i % 2 == 0:
