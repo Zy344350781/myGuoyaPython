@@ -1,6 +1,6 @@
 
 
-if __name__ == '__main__':
+
     # range(10)       #从0开始小于10
     # range(5,10)     #从5开始小于10
     # range(2,10,2)   #从2开始小于10且步长2
@@ -48,6 +48,24 @@ if __name__ == '__main__':
     #     blist.append(i)
     # print(blist)
 
+    # 周末作业
+    # 写一个方法,传入两个 int参数, 将两个参数之间的 偶数加起来
+def int():
+    a = 2
+    b = 100
+    sum = 0
+    if a < b:
+        for i in range(a + 1, b):
+            if i % 2 == 0:
+                sum += i
+    elif a > b:
+        for i in range(b + 1, a):
+            if i % 2 == 0:
+                sum += i
+    else:
+        print('两数相等')
+    print(sum)
 
-
+if __name__ == '__main__':
+    int()
     pass
