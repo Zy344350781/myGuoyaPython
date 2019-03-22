@@ -28,6 +28,26 @@ if __name__ == '__main__':
     # else:
     #     print(b)
 
+    # a = 1
+    # b = 2
+    # c = 3
+    # if a>b:
+    #     print(a)
+    # elif c>a:
+    #     print(c)
+    # else:
+    #     print(b)
+    # pass
+
+
+    # blist =[]
+    # alist = range(1,10)
+    # print(type(alist))
+    # print(alist[5])
+    # for i in range(0,9):
+    #     blist.append(i)
+    # print(blist)
+
+
 
     pass
-
