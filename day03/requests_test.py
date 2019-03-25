@@ -6,7 +6,7 @@ if __name__ == '__main__':
     url_login = 'http://192.168.60.132:8080/admin/login'
     data = {'username':'admin','password':'123456'}#封装请求参数
     #发送请求 带上url和json(请求正文)两个参数
-    post = requests.post(url=url_login, json = data)
+    post = requests.post(url=url_login, json = data)#json=输入post请求参数
     text_body = post.text#获取text格式的响应报文(str)
     json_body = post.json()#获取json格式的响应报文(dict)
     # print(type(text_body))
