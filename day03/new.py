@@ -23,17 +23,18 @@ if __name__ == '__main__':
     #         continue#continue终止本次循环
     #     print(i)
 
-    getcwd = os.getcwd()#获取当前路径
-    abspath1 = os.path.abspath('..')#获取上级目录
-    abspath2 = os.path.abspath('../..')#获取上上级目录
-    print(getcwd)
-    print(abspath1)
-    print(abspath2)
-    text_io = open('./test.txt','w+')#有就打开,没有就新建,一个文件open('绝对或相对路径','w+:读写权限')
-    text_io.write('xxxxx')#在文件中输入'xxxxx'
-    text_io = open('./test.txt', 'a+')  # 有就打开,没有就新建,一个文件open('绝对或相对路径','w+:读写权限')
-    text_io.write('xxxxx')  # 在文件中输入'xxxxx'
-    readline = text_io.readline()
-    print(readline)
-    readlines = text_io.readlines()
-    print(readlines)
+    # getcwd = os.getcwd()#获取当前路径
+    # abspath1 = os.path.abspath('..')#获取上级目录
+    # abspath2 = os.path.abspath('../..')#获取上上级目录
+    # print(getcwd)
+    # print(abspath1)
+    # print(abspath2)
+    # text_io = open('./test.txt','w+')#有就打开,没有就新建,一个文件open('绝对或相对路径','w+:读写权限')
+    # text_io.write('xxxxx')#在文件中输入'xxxxx'
+    # text_io = open('./test.txt', 'a+')  # 有就打开,没有就新建,一个文件open('绝对或相对路径','w+:读写权限')
+    # text_io.write('xxxxx')  # 在文件中输入'xxxxx'
+    # readline = text_io.readline()
+    # print(readline)
+    # readlines = text_io.readlines()
+    # print(readlines)
+    pass
