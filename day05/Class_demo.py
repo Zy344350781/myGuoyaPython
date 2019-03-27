@@ -12,7 +12,7 @@ class Human(object):
     def myInfo(self):
         print('我叫%s,今年%s岁,%s'%(self.name,self.age,self.sex))
 
-class Tester(Human):
+class Tester(Human):#继承Human父类中的属性
     def testing(self):
         print('我叫%s,我正在执行测试,我的详细信息在下方.'%self.name)
         self.myInfo()
