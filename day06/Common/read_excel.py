@@ -43,6 +43,6 @@ def read_excel_list(file):
     return l
 
 
-if __name__ == '__main__':
-    excel_list = read_excel_list("../doctment/test.xlsx")
-    print(excel_list)
+# if __name__ == '__main__':
+#     excel_list = read_excel_list("../doctment/login.xlsx")
+#     print(excel_list)

@@ -3,7 +3,6 @@ from day06.Common import Log
 from day06.Common import Shell
 
 if __name__ == '__main__':
-
     log = Log.MyLog()
     shell = Shell.Shell()
     xml_report_path = './Report/xml/'
