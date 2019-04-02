@@ -9,6 +9,9 @@ assertions = Assert.Assertions()
 head = {''}
 id = []
 status = []
+deliveryCompany = []
+deliverySn = []
+yumin_url = 'http://192.168.60.132:8080'
 
 excel_list_login = read_excel.read_excel_list('./doctment/login.xlsx')
 ids =[]
@@ -23,7 +26,7 @@ class TestLogin(object):
         ids=ids
     )
     def test_login(self,name,pwd,msg):
-        login_url = 'http://192.168.60.132:8080/admin/login'
+        login_url =yumin_url+'/admin/login'
         login_data = {'username':name,'password':pwd}
         login_response = request.post_request(url=login_url, json=login_data)
         login_json = login_response.json()
@@ -39,7 +42,7 @@ class TestLogin(object):
 
     @allure.story("login_info")
     def test_info(self):
-        info_url = 'http://192.168.60.132:8080/admin/info'
+        info_url = yumin_url+'/admin/info'
         info_response = request.get_request(url=info_url, headers=head)
         info_json = info_response.json()
         if info_json['code'] == 200:
@@ -49,8 +52,8 @@ class TestLogin(object):
 
     @allure.story('list')
     def test_list(self):
-        list_url = 'http://192.168.60.132:8080/order/list'
-        list_param = {'pageSize':20,'pageNum':1}
+        list_url = yumin_url+'/order/list'
+        list_param = {'pageSize':20,'pageNum':1,'status':1}
         list_resp = request.get_request(url=list_url, params=list_param, headers=head)
         resp_json = list_resp.json()
         assertions.assert_code(resp_json['code'],200)
@@ -64,20 +67,37 @@ class TestLogin(object):
     @allure.story("order_info")
     def test_order(self):
         for i in range(len(id)):
-            url = 'http://192.168.60.132:8080/order/%s'%id[i]
+            url = yumin_url+'/order/%s'%id[i]
             order_resp = request.get_request(url=url, headers=head)
             resp_json = order_resp.json()
             assertions.assert_code(resp_json['code'],200)
             order_data = resp_json['data']
             global status
             status.append(order_data['status'])
+            global deliveryCompany
+            deliveryCompany.append(order_data['deliveryCompany'])
+            global deliverySn
+            deliverySn.append(order_data['deliverySn'])
+
 
     @allure.story("moneyInfo")
     def test_moneyInfo(self):
         for i in range(len(id)):
-            url = 'http://192.168.60.132:8080/order/update/moneyInfo'
+            url = yumin_url+'/order/update/moneyInfo'
             data = {'discountAmount':20,'freightAmount':8,'orderId':id[i],'status':status[i]}
             moneyInfo_resp = request.post_request(url=url, json=data, headers=head)
             resp_json = moneyInfo_resp.json()
             assertions.assert_code(resp_json['data'],1)
+
+    @allure.story("delivery")
+    def test_delivery(self):
+        url = yumin_url+'/order/update/delivery'
+        data = {'deliveryCompany':deliveryCompany[0],'deliverySn':deliverySn[0],'orderId':id[0]}
+        delivery_resp = request.post_request(url=url, json=data, headers=head)
+        delivery_json = delivery_resp.json()
+        assertions.assert_code(delivery_json['data'],1)
+
+    @allure.story("close")
+    def test_close(self):
+        pass
 
