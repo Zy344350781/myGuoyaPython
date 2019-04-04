@@ -5,7 +5,7 @@
 import allure
 
 # 接口全局配置
-from Common.Log import MyLog
+from day07.Common.Log import MyLog
 
 def dic_to_str(dic):
     s = ''
